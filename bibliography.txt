@@ -1,0 +1,5 @@
+For System Exit
+https://stackoverflow.com/questions/2823472/is-there-a-method-that-tells-my-program-to-quit
+
+For loop
+https://wiki.python.org/moin/ForLoop
