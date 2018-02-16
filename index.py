@@ -13,27 +13,33 @@ else:
 
 cipherKey = input("Enter Cipher Key:").lower()
 keyLength = len(cipherKey)
-
+    
 userInput = input("Enter phrase:").lower()
 inputLen = len(userInput)
 
 output = ""
 
 def encryptInput(keyPos, userPos):
+    if userInput[userPos].isalpha() != True:
+        output += userInput[userPos]
+        return
     outputNum = alphNum[cipherKey[keyPos]] + alphNum[userInput[userPos]]
     if outputNum > 25:
         outputNum = outputNum - 26
     global output
     output += numAlph[outputNum]
-
-
+    
+    
 def decryptInput(keyPos, userPos):
+    if userInput[userPos].isalpha() != True:
+        output += userInput[userPos]
+        return
     outputNum =  alphNum[userInput[userPos]] - alphNum[cipherKey[keyPos]]
     if outputNum < 0:
         outputNum = outputNum + 26
     global output
     output += numAlph[outputNum]
-
+    
 counter = 0
 for i in range(inputLen):
     if(which == "e"):encryptInput(counter, i)
